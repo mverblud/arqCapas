@@ -1,1 +1,1 @@
-# arqCapas
+# Servidor web completo en Capas (MVC - DTOs - DAOs - Factory)
