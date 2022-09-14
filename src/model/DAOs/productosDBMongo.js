@@ -1,17 +1,18 @@
 import productosDTO from '../DTOs/productos.js';
 import ProductoBaseDAO from './productos.js';
 import Producto from '../models/productos.js';
-import mongoose from "mongoose";
+//import mongoose from "mongoose";
 
 export default class ProductoDBMongoDAO extends ProductoBaseDAO {
 
-    constructor(collection) {
+    constructor() {
         super();
-        this.conectarDB();
-        this._collection = collection;
+        this._collection = Producto;
+//        this.conectarDB();
+        
     };
 
-    async conectarDB() {
+/*     async conectarDB() {
         try {
             const db = await mongoose.connect(
                 process.env.MONGO_URI,
@@ -27,7 +28,7 @@ export default class ProductoDBMongoDAO extends ProductoBaseDAO {
             console.log(`Error: ${error.message}`);
             process.exit(1);
         }
-    };
+    }; */
 
     obtenerProductos = async _id => {
         try {

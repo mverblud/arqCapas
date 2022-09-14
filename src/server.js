@@ -1,10 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
-import RouterProductos from './routes/productos.js'
+import conectarDB from "./config/db.js";
+import RouterProductos from './routes/productos.js';
 
 const app = express();
 app.use(express.json());
 dotenv.config();
+
+if (process.env.TIPO_PRESISTENCIA = 'MONGO') {
+    conectarDB();
+}
 
 const routerProductos = new RouterProductos();
 app.use('/productos', routerProductos.start());
